@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public static class ExtensionMethods {
+public static class TransformExtensions {
 	public static void SetX(this Transform transform, float x) {
 		Vector3 position = transform.position;
 		transform.position = new Vector3(x, position.y, position.z);
