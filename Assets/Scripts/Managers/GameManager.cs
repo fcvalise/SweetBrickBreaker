@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 
 namespace Game.Managers {
-	[RequireComponent(typeof(IController))]
+	[RequireComponent(typeof(MouseController))]
+	[RequireComponent(typeof(SceneLoader))]
+	[RequireComponent(typeof(LevelManager))]
 	public class GameManager : MonoBehaviour {
 		private static GameManager _instance = null;
-		private static IController _controller = null;
+		private IController _controller = null;
+		private LevelManager _levelManager = null;
 
 		private void Awake() {
 			if (_instance == null) {
@@ -18,14 +21,19 @@ namespace Game.Managers {
 
 		private void InitGame() {
 			_controller = gameObject.GetComponent<IController>();
+			_levelManager = gameObject.GetComponent<LevelManager>();
 		}
 
 		public static GameManager instance {
 			get { return _instance; }
 		}
 
-		public static IController controller {
+		public IController controller {
 			get { return _controller; }
+		}
+
+		public LevelManager levelManager {
+			get { return _levelManager; }
 		}
 	}
 }
