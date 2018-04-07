@@ -88,7 +88,9 @@ namespace Game.Editor {
 					GUILayout.EndHorizontal();
 
 					_levelList.levels[_viewIndex - 1].levelName = EditorGUILayout.TextField("Level Name", _levelList.levels[_viewIndex - 1].levelName as string);
-					_levelList.levels[_viewIndex - 1].size = EditorGUILayout.Vector2IntField("Level Size", _levelList.levels[_viewIndex - 1].size);
+					_levelList.levels[_viewIndex - 1].height = EditorGUILayout.FloatField("Level Height", _levelList.levels[_viewIndex - 1].height);
+					_levelList.levels[_viewIndex - 1].brickRowCount = EditorGUILayout.IntField("Bick Row Count", _levelList.levels[_viewIndex - 1].brickRowCount);
+					_levelList.levels[_viewIndex - 1].brickColCount = EditorGUILayout.IntField("Brick Column Count", _levelList.levels[_viewIndex - 1].brickColCount);
 				} else {
 					GUILayout.Label("This Level List is Empty.");
 				}

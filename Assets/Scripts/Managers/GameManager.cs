@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using Game.Managers;
 
-namespace Game.Managers {
+namespace Game {
 	[RequireComponent(typeof(MouseController))]
 	[RequireComponent(typeof(SceneLoader))]
 	[RequireComponent(typeof(LevelManager))]
@@ -22,6 +23,13 @@ namespace Game.Managers {
 		private void InitGame() {
 			_controller = gameObject.GetComponent<IController>();
 			_levelManager = gameObject.GetComponent<LevelManager>();
+		}
+
+		//TODO : DEBUG
+		private void Update() {
+			if (Input.GetKeyDown(KeyCode.Space)) {
+				_levelManager.NextLevel();
+			}
 		}
 
 		public static GameManager instance {

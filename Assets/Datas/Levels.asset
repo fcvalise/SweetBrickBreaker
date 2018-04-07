@@ -13,8 +13,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levels:
   - levelName: Level 1
-    size: {x: 10, y: 20}
+    height: 10
+    brickRowCount: 6
+    brickColCount: 2
   - levelName: Level 2
-    size: {x: 20, y: 30}
+    height: 15
+    brickRowCount: 10
+    brickColCount: 4
   - levelName: Level 3
-    size: {x: 40, y: 60}
+    height: 25
+    brickRowCount: 15
+    brickColCount: 6
+  - levelName: Level 4
+    height: 50
+    brickRowCount: 20
+    brickColCount: 8
