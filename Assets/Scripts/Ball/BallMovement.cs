@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.Ball {
 	public class BallMovement : MonoBehaviour {
-		[SerializeField] private float _speed = 100.0f;
+		[SerializeField] private float _speed = 10.0f;
 		private Rigidbody2D _rigidbody = null;
 
 		private void Awake() {
@@ -16,6 +16,10 @@ namespace Game.Ball {
 
 		public void Stop() {
 			_rigidbody.velocity = Vector2.zero;
+		}
+
+		private void FixedUpdate() {
+			_rigidbody.velocity = _speed * (_rigidbody.velocity.normalized);
 		}
 	}
 }
