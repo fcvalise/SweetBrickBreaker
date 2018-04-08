@@ -30,8 +30,8 @@ namespace Game.Level.Brick {
 			return newBrick;
 		}
 
-		public GameObject CreateRandomBrick(Vector2 position, Vector2 scale) {
-			BrickType type = (BrickType)Random.Range(0, (int)BrickType.Count);
+		public GameObject CreateRandomBrick(BrickType[] types, Vector2 position, Vector2 scale) {
+			BrickType type = types[Random.Range(0, types.Length)];
 			return CreateBrick(type, position, scale);
 		}
 	}

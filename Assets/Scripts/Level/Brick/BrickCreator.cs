@@ -19,7 +19,7 @@ namespace Game.Level.Brick {
 					float y = origin.y - j * deltaPos - deltaPos / 2.0f;
 					Vector3 position = new Vector3(x, y, 0.0f); 
 					Vector2 scale = new Vector2(deltaPos * 0.8f, deltaPos * 0.8f);
-					GameObject newBrick = factory.CreateRandomBrick(position, scale);
+					GameObject newBrick = factory.CreateRandomBrick(LevelManager.instance.currentLevel.allowedTypes, position, scale);
 					newBrick.transform.parent = transform;
 				}
 			}
