@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace Game.Level.Brick {
 	public class BrickFactory : MonoBehaviour {
 		public enum BrickType {
-			Simple = 0,
-			Life = 1,
+			OneHp = 0,
+			TwoHp = 1,
 			Static = 2,
 			Count = 3
 		}
@@ -17,11 +17,11 @@ namespace Game.Level.Brick {
 			newBrick.transform.localScale = scale;
 
 			switch (type) {
-				case BrickType.Simple:
-					newBrick.AddComponent<SimpleBrick>();
+				case BrickType.OneHp:
+					newBrick.AddComponent<OneHpBrick>();
 				break;
-				case BrickType.Life:
-					newBrick.AddComponent<LifeBrick>();
+				case BrickType.TwoHp:
+					newBrick.AddComponent<TwoHPBrick>();
 				break;
 				case BrickType.Static:
 					newBrick.AddComponent<StaticBrick>();
