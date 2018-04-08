@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEditor;
 using System.Collections.Generic;
 
 namespace Game.Level.Brick {
@@ -11,6 +12,8 @@ namespace Game.Level.Brick {
 		}
 
 		[SerializeField] private GameObject _brick;
+		[Range(0.0f, 1.0f)][SerializeField] private float _twoHpChance;
+		[Range(0.0f, 1.0f)][SerializeField] private float _staticChance;
 
 		public GameObject CreateBrick(BrickType type, Vector2 position, Vector2 scale) {
 			GameObject newBrick = Instantiate(_brick, position, Quaternion.identity);;
@@ -32,7 +35,12 @@ namespace Game.Level.Brick {
 
 		public GameObject CreateRandomBrick(BrickType[] types, Vector2 position, Vector2 scale) {
 			BrickType type = types[Random.Range(0, types.Length)];
-			return CreateBrick(type, position, scale);
+			if (ArrayUtility.Contains(types, BrickType.Static) && Random.value < _staticChance) {
+				CreateBrick(BrickType.Static, position, scale);
+			} else if (ArrayUtility.Contains(types, BrickType.Static) && Random.value < _twoHpChance) {
+				CreateBrick(BrickType.TwoHp, position, scale);
+			}
+			return CreateBrick(BrickType.OneHp, position, scale);
 		}
 	}
 }

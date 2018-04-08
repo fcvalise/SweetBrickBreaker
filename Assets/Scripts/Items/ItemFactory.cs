@@ -9,6 +9,8 @@ namespace Game.Item {
 		}
 
 		[SerializeField] private GameObject _item;
+		[Range(0.0f, 1.0f)][SerializeField] private float _lifeBonusChance;
+		[Range(0.0f, 1.0f)][SerializeField] private float _sizeBonusChance;
 
 		public GameObject CreateItem(ItemType type, Vector2 position) {
 			GameObject newItem = Instantiate(_item, position, Quaternion.identity);;
@@ -25,10 +27,10 @@ namespace Game.Item {
 		}
 
 		public GameObject CreateRandomItem(Vector2 position) {
-			if (Random.value < 0.2f) {
-				CreateItem(ItemType.LifeBonus, position);
-			} else if (Random.value < 0.1f) {
+			if (Random.value < _lifeBonusChance) {
 				CreateItem(ItemType.SizeBonus, position);
+			} else if (Random.value < _sizeBonusChance) {
+				CreateItem(ItemType.LifeBonus, position);
 			}
 			return null; 
 		}
