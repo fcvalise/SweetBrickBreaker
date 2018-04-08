@@ -8,18 +8,15 @@ namespace Game.Level.Brick {
 
 		private void Awake() {
 			_hp = maxHp;
+			LevelManager.instance.brickManager.AddBrick(this);
 		}
 
 		protected override void OnCollision() {
 			_hp--;
 			SetColor(Color.Lerp(Color.white, color, (float)_hp / (float)maxHp));
 			if (_hp <= 0) {
-				Destroy(gameObject);
+				LevelManager.instance.brickManager.RemoveBrick(this);
 			}
-		}
-
-		protected override bool isDestructable {
-			get { return true; }
 		}
 	}
 }
