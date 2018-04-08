@@ -45,9 +45,13 @@ namespace Game.Utils {
 		}
 
 		public void Update() {
-			float dx = _target.position.x - _bone1.transform.position.x;
+			Vector3 position = _target.position;
+			if (position.y - _bone1.transform.position.y < 1.0f) {
+				position.y = _bone1.transform.position.y + 1.0f;
+			}
+			float dx = position.x - _bone1.transform.position.x;
 			float x = dx > 0 ? Mathf.Abs(dx) : -Mathf.Abs(dx);
-			float dy = _target.position.y - _bone1.transform.position.y;
+			float dy = position.y - _bone1.transform.position.y;
 			float y = dy > 0 ? Mathf.Abs(dy) : -Mathf.Abs(dy);
 
 			float num = Mathf.Pow(x, 2) + Mathf.Pow(y, 2) - Mathf.Pow(_d1, 2) - Mathf.Pow(_d2, 2);
