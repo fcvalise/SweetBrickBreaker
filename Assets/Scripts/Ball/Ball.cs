@@ -23,11 +23,14 @@ namespace Game.Ball {
 		}
 
 		private void OnTriggerEnter2D(Collider2D other) {
-			_isAttached = true;
-			transform.parent = _player.transform;
-			transform.localPosition = _originLocalPos;
-			_ballMovement.Stop();
-			LevelManager.instance.lifeManager.RemoveLife();
+			// TODO: Verify with tags
+			if (other.name == "WallDown") {
+				_isAttached = true;
+				transform.parent = _player.transform;
+				transform.localPosition = _originLocalPos;
+				_ballMovement.Stop();
+				LevelManager.instance.lifeManager.RemoveLife();
+			}
 		}
 
 		public BallMovement movement {
