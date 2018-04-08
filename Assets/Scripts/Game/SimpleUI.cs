@@ -23,7 +23,7 @@ namespace Game {
 		}
 
 		private void Update() {
-			_text.rectTransform.SetY(_text.rectTransform.position.y - Time.deltaTime * 100.0f);
+			_text.rectTransform.SetY(_text.rectTransform.position.y - Time.deltaTime * 400.0f);
 		}
 
 		private void DisplayLife() {
