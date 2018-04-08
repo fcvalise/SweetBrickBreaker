@@ -28,9 +28,9 @@ namespace Game.Item {
 
 		public GameObject CreateRandomItem(Vector2 position) {
 			if (Random.value < _lifeBonusChance) {
-				CreateItem(ItemType.SizeBonus, position);
-			} else if (Random.value < _sizeBonusChance) {
 				CreateItem(ItemType.LifeBonus, position);
+			} else if (Random.value < _sizeBonusChance) {
+				CreateItem(ItemType.SizeBonus, position);
 			}
 			return null; 
 		}

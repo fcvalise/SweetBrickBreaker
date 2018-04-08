@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 namespace Game.Editor {
 	public class CreateLevelList {
 		[MenuItem("Assets/Create/Level List")]
@@ -13,3 +14,4 @@ namespace Game.Editor {
 		}
 	}
 }
+#endif

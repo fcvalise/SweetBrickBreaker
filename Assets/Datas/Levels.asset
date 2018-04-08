@@ -16,14 +16,14 @@ MonoBehaviour:
     height: 10
     brickRowCount: 6
     brickColCount: 2
-    allowedTypes: 000000000100000002000000
+    allowedTypes: 0000000002000000
   - levelName: Level 2
-    height: 15
+    height: 10
     brickRowCount: 10
     brickColCount: 4
-    allowedTypes: 0000000002000000
+    allowedTypes: 000000000100000002000000
   - levelName: Level 3
-    height: 25
+    height: 15
     brickRowCount: 15
     brickColCount: 6
     allowedTypes: 000000000100000002000000

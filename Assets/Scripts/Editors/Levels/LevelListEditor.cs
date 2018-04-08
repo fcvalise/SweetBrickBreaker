@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
+#if UNITY_EDITOR
 namespace Game.Editor {
 	public class LevelListEditor : EditorWindow {
 
@@ -135,3 +136,4 @@ namespace Game.Editor {
 		}
 	}
 }
+#endif

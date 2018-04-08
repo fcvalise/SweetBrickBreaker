@@ -10,6 +10,11 @@ namespace Game {
 	[RequireComponent(typeof(LifeManager))]
 	public class LevelManager : MonoBehaviour {
 		[SerializeField] private LevelList _levelList = null;
+		[SerializeField] private Color _playerColor;
+		[SerializeField] private Color _ballColor;
+		[SerializeField] private Color _backgroundColor;
+		[SerializeField] private Material _playerMaterial;
+		[SerializeField] private Material _ballMaterial;
 
 		private static LevelManager _instance;
 		private BrickManager _brickManager = null;
@@ -29,15 +34,22 @@ namespace Game {
 			_lifeManager = GetComponent<LifeManager>();
 			BrickManager.OnDestroyed += CheckBrickCount;
 			LifeManager.OnFailed += CheckLife;
+
+			_playerColor = UnityEngine.Random.ColorHSV(0.0f, 0.3f, 0.4f, 0.6f, 1.0f, 1.0f);
+			_ballColor = UnityEngine.Random.ColorHSV(0.3f, 0.6f, 0.3f, 0.6f, 1.0f, 1.0f);
+			_backgroundColor = UnityEngine.Random.ColorHSV(0.6f, 1.0f, 0.1f, 0.2f, 1.0f, 1.0f);
+
+			_playerMaterial.color = _playerColor;
+			_ballMaterial.color = _ballColor;
 		}
 
 		public void NextLevel() {
 			Progress.instance.levelIndex++;
 			if (Progress.instance.levelIndex >= _levelList.levels.Count) {
 				Progress.instance.levelIndex = _levelList.levels.Count - 1;
-				SceneManager.LoadScene("Menu");
+				SceneManager.LoadScene("Win");
 			}
-			SceneManager.LoadScene("Game");
+			SceneManager.LoadScene("NextLevel");
 		}
 
 		public void PreviousLevel() {
@@ -45,7 +57,7 @@ namespace Game {
 			if (Progress.instance.levelIndex <= 0) {
 				Progress.instance.levelIndex = 0;
 			}
-			SceneManager.LoadScene("Game");
+			SceneManager.LoadScene("PreviousLevel");
 		}
 
 		private void CheckBrickCount() {
@@ -79,6 +91,18 @@ namespace Game {
 
 		public LifeManager lifeManager {
 			get { return _lifeManager; }
+		}
+
+		public Color playerColor {
+			get { return _playerColor; }
+		}
+
+		public Color ballColor {
+			get { return _ballColor; }
+		}
+
+		public Color backgroundColor {
+			get { return _backgroundColor; }
 		}
 	}
 }

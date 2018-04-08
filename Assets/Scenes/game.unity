@@ -152,6 +152,46 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _playerColor.r
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _playerColor.g
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _playerColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _playerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _lifeColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _lifeColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _lifeColor.b
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 114660505663954920, guid: 0af52091e407a4a39ac323b810010a98,
+        type: 2}
+      propertyPath: _lifeColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0af52091e407a4a39ac323b810010a98, type: 2}
   m_IsPrefabParent: 0
@@ -252,6 +292,17 @@ GameObject:
   m_PrefabParentObject: {fileID: 1444908277381032, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
     type: 2}
   m_PrefabInternal: {fileID: 1476069548}
+--- !u!114 &435687777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 435687776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8ff648c3d864db5b35c9fc1dce8ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &435687781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +504,56 @@ Prefab:
       propertyPath: _staticChance
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _playerColor.r
+      value: 0.39999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _playerColor.g
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _playerColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _playerColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _ballColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _ballColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _ballColor.b
+      value: 0.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _ballColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _ballMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: d97eb1c3c6aec43859bbb6cb5fc1a00f, type: 2}
+    - target: {fileID: 114877558522750106, guid: 29f4c4df3c7614a8e8d35c0e277a027b,
+        type: 2}
+      propertyPath: _playerMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 56a19bdbce85f46ba8feaa312d27dd9f, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 29f4c4df3c7614a8e8d35c0e277a027b, type: 2}
   m_IsPrefabParent: 0
@@ -581,6 +682,7 @@ MonoBehaviour:
   _bounced: {fileID: 8300000, guid: fbb9a6049166c43adacec513ad078f19, type: 3}
   _failed: {fileID: 8300000, guid: fe48532af828942008732eda09016ddf, type: 3}
   _destroyed: {fileID: 8300000, guid: b60c0befbd3af489d8c7762c5ee5eb4e, type: 3}
+  _bonus: {fileID: 8300000, guid: fe1eaf881fce3451da193357f7b2d7e0, type: 3}
 --- !u!82 &1627547925
 AudioSource:
   m_ObjectHideFlags: 0
@@ -757,7 +859,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Simple UI
 --- !u!222 &1866780561
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -788,6 +890,7 @@ GameObject:
   - component: {fileID: 1919842945}
   - component: {fileID: 1919842949}
   - component: {fileID: 1919842950}
+  - component: {fileID: 1919842951}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -818,7 +921,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7319047, g: 0.21787111, b: 0.9056604, a: 0}
+  m_BackGroundColor: {r: 0.8030758, g: 0.61000353, b: 0.8679245, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -881,3 +984,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 100
+--- !u!114 &1919842951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1919842944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8fa65f38b2247c49d1847bba7d7342, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

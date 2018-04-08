@@ -3,8 +3,9 @@ using System;
 
 namespace Game.Level {
 	public class LifeManager : MonoBehaviour {
-		public delegate void FailedEvent();
-		public static event FailedEvent OnFailed;
+		public delegate void LifeEvent();
+		public static event LifeEvent OnFailed;
+		public static event LifeEvent OnBonus;
 		[SerializeField] private int _lifeCount = 5;
 
 		public int lifeCount {
@@ -12,7 +13,10 @@ namespace Game.Level {
 		}
 
 		public void AddLife() {
-				_lifeCount++;
+			_lifeCount++;
+			if (OnBonus != null) {
+				OnBonus();
+			}
 		}
 
 		public void RemoveLife() {

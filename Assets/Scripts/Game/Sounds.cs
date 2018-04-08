@@ -8,6 +8,7 @@ namespace Game {
 		[SerializeField] private AudioClip _bounced = null;
 		[SerializeField] private AudioClip _failed = null;
 		[SerializeField] private AudioClip _destroyed = null;
+		[SerializeField] private AudioClip _bonus = null;
 
 		private AudioSource _source = null;
 
@@ -15,17 +16,19 @@ namespace Game {
 			_source = GetComponent<AudioSource>();
 			BrickManager.OnDestroyed += PlayDestroyed;
 			LifeManager.OnFailed += PlayFailed;
+			LifeManager.OnBonus += PlayBonus;
 			BallEvent.OnBounced += PlayBounced;
 		}
 
 		private void OnDisable() {
 			BrickManager.OnDestroyed -= PlayDestroyed;
 			LifeManager.OnFailed -= PlayFailed;
+			LifeManager.OnBonus -= PlayBonus;
 			BallEvent.OnBounced -= PlayBounced;
 		}
 
 		private void PlayBounced() {
-			_source.PlayOneShot(_bounced, 0.7f);
+			_source.PlayOneShot(_bounced, 0.5f);
 		}
 
 		private void PlayFailed() {
@@ -33,7 +36,11 @@ namespace Game {
 		}
 
 		private void PlayDestroyed() {
-			_source.PlayOneShot(_destroyed, 0.7f);
+			_source.PlayOneShot(_destroyed, 0.5f);
+		}
+
+		private void PlayBonus() {
+			_source.PlayOneShot(_bonus, 0.7f);
 		}
 	}
 }

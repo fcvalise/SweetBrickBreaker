@@ -14,10 +14,12 @@ namespace Game {
 			_text.text = LevelManager.instance.currentLevel.levelName;
 			_originY = _text.rectTransform.position.y;
 			LifeManager.OnFailed += DisplayLife;
+			LifeManager.OnBonus += DisplayLife;
 		}
 
 		private void OnDisable() {
 			LifeManager.OnFailed -= DisplayLife;
+			LifeManager.OnBonus -= DisplayLife;
 		}
 
 		private void Update() {
@@ -26,7 +28,7 @@ namespace Game {
 
 		private void DisplayLife() {
 			_text.text = LevelManager.instance.lifeManager.lifeCount.ToString();
-			_text.color = Color.yellow;
+			_text.color = LevelManager.instance.ballColor; 
 			_text.rectTransform.SetY(_originY);
 		}
 	}
