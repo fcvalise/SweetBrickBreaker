@@ -12,10 +12,20 @@ namespace Game.Level {
 		private void Start() {
 			_target = transform.position;
 			BrickManager.OnDestroyed += ShakeDestroy; 
+			LifeManager.OnFailed += ShakeFailed; 
+		}
+
+		private void OnDisable() {
+			BrickManager.OnDestroyed -= ShakeDestroy;
+			LifeManager.OnFailed -= ShakeFailed;
 		}
 
 		public void ShakeDestroy() {
 			ShakeRandom(0.1f);
+		}
+
+		public void ShakeFailed() {
+			ShakeRandom(0.2f);
 		}
 
 		public void Shake(float powerX, float powerY) {

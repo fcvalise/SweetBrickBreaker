@@ -6,13 +6,13 @@ namespace Game.Ball {
 		[SerializeField] GameObject _player = null;
 		private IController _controller = null;
 		private BallMovement _ballMovement = null;
-		private Vector2 _originLocalPos;
+		private Vector2 _originPos;
 		private bool _isAttached = true;
 
 		private void Awake() {
 			_ballMovement = GetComponent<BallMovement>();
 			_controller = _player.GetComponent<IController>();
-			_originLocalPos = transform.localPosition;
+			_originPos = transform.position;
 		}
 
 		private void Update() {
@@ -27,7 +27,7 @@ namespace Game.Ball {
 			if (other.name == "WallDown") {
 				_isAttached = true;
 				transform.parent = _player.transform;
-				transform.localPosition = _originLocalPos;
+				transform.position = _originPos;
 				_ballMovement.Stop();
 				LevelManager.instance.lifeManager.RemoveLife();
 			}
