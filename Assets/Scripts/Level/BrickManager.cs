@@ -22,7 +22,7 @@ namespace Game.Level {
 
 		public void RemoveBrick(ABrick brick) {
 			_brickCount--;
-			_itemFactory.CreateItem(ItemFactory.ItemType.SizeBonus, brick.gameObject.transform.position);
+			_itemFactory.CreateRandomItem(brick.gameObject.transform.position);
 			Destroy(brick.gameObject);
 			if (OnDestroyed != null) {
 				OnDestroyed();

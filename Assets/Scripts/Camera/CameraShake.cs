@@ -5,12 +5,10 @@ namespace Game.Level {
 		[SerializeField] float _speed = 20.0f;
 		private Vector2 _velocity;
 		private Vector2 _position;
-		private Vector2 _target;
 		private float _drag = 0.1f;
 		private float _elasticity = 0.1f;
 
 		private void Start() {
-			_target = transform.position;
 			BrickManager.OnDestroyed += ShakeDestroy; 
 			LifeManager.OnFailed += ShakeFailed; 
 		}

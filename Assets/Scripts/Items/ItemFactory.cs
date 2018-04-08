@@ -5,8 +5,7 @@ namespace Game.Item {
 	public class ItemFactory : MonoBehaviour {
 		public enum ItemType {
 			LifeBonus = 0,
-			SizeBonus = 1,
-			None
+			SizeBonus = 1
 		}
 
 		[SerializeField] private GameObject _item;
@@ -25,9 +24,13 @@ namespace Game.Item {
 			return newItem;
 		}
 
-		public GameObject CreateRandomItem(ItemType[] types, Vector2 position) {
-			ItemType type = types[Random.Range(0, types.Length)];
-			return CreateItem(type, position);
+		public GameObject CreateRandomItem(Vector2 position) {
+			if (Random.value < 0.2f) {
+				CreateItem(ItemType.LifeBonus, position);
+			} else if (Random.value < 0.1f) {
+				CreateItem(ItemType.SizeBonus, position);
+			}
+			return null; 
 		}
 	}
 }
