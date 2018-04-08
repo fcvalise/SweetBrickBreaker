@@ -9,7 +9,7 @@ namespace Game.Level {
 
 		private void Start() {
 			Camera camera = Camera.main;
-			float height = GameManager.instance.levelManager.currentLevel.height;
+			float height = LevelManager.instance.currentLevel.height;
 			float width = height * camera.aspect;
 
 			_wallRight.transform.localScale = new Vector3(1.0f, height, 0.0f);

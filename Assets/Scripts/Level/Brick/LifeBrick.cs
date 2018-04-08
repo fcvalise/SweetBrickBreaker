@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Level {
+namespace Game.Level.Brick {
 	public class LifeBrick : ABrick {
 		[SerializeField] private int _life = 2;
 
@@ -9,6 +9,10 @@ namespace Game.Level {
 			if (_life <= 0) {
 				Destroy(gameObject);
 			}
+		}
+
+		protected override bool isDestructable {
+			get { return true; }
 		}
 	}
 }

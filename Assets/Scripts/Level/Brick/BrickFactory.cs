@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Game.Level {
+namespace Game.Level.Brick {
 	public class BrickFactory : MonoBehaviour {
 		public enum BrickType {
 			Simple = 0,

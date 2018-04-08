@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Managers {
+namespace Game.Player.Controller {
 	public class MouseController : MonoBehaviour, IController {
 		public Vector2 position {
 			get { 

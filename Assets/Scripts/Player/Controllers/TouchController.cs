@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Managers {
+namespace Game.Player.Controller {
 	public class TouchController : MonoBehaviour, IController {
 		private Camera _camera;
 		private Vector2 _position;

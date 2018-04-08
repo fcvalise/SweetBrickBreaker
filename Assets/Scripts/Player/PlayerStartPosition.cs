@@ -6,7 +6,7 @@ namespace Game.Player {
 
 		private void Start() {
 			Camera camera = Camera.main;
-			float height = GameManager.instance.levelManager.currentLevel.height; 
+			float height = LevelManager.instance.currentLevel.height; 
 			transform.SetY(-height / 2.0f + _marginBottomY * height);
 		}
 	}
